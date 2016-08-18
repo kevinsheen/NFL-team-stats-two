@@ -1,0 +1,14 @@
+<div class="jumbotron" ng-controller="MainCtrl">
+  
+
+<p>Select an NFL Team:</p>
+
+<div ng-repeat="conference in Teams.conferences" label="{{conference.name}}">
+    <div ng-repeat="division in conference.divisions" label="{{division.name}}">
+     
+      <ul>
+        <li ng-repeat="team in division.teams"> <a ng-click="selectTeam(team.id)">{{team.name}}</a></li>
+      </ul>
+      
+    </div> 
+</div>
