@@ -1,14 +1,21 @@
 <div class="jumbotron" ng-controller="MainCtrl">
-  
+  <p><h2>
+  Look up any NFL team to find their 2015 season stats!
+  </h2></p>
 
 <p>Select an NFL Team:</p>
 
 <div ng-repeat="conference in Teams.conferences" label="{{conference.name}}">
     <div ng-repeat="division in conference.divisions" label="{{division.name}}">
      
-      <ul>
+      <dl class="nfl-team-list">
         <li ng-repeat="team in division.teams"> <a ng-click="selectTeam(team.id)">{{team.name}}</a></li>
-      </ul>
-      
-    </div> 
+      </dl>
+      </div> 
+
+
+<p>
+    <button class="btn btn-lg btn-primary" ng-click="team">Get 2015 Team Stats</button>
+</p>
+
 </div>

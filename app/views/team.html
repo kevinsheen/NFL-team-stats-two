@@ -1,1 +1,15 @@
+<div ng-controller="TeamCtrl" class="results">
+  <h1>[Selected Team]</h1>
+  
+  <div ng-repeat= "week in current.weeks">
+    <h2>Week {{week.title}}</h2>
+    <div ng-repeat="game in filteredGames = (week.games | filter:teamname)">
+      <span>
+        {{game.away.name}} @ {{game.home.name}} on {{game.broadcast.network}} at {{game.scheduled|date: "short"}}
+      </span>
+    </div>
+  </div>
+</div>
+
 {{TeamStats | json}}
+
