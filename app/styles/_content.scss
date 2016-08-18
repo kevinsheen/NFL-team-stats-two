@@ -1,5 +1,5 @@
-body {
-  background-image: url("app/images/green-turf-background.jpg");
+.choose {
+  color: green; 
 }
 
 .nfl-team-list {
@@ -29,6 +29,7 @@ body {
 .header {
   border-bottom: 1px solid #e5e5e5;
   margin-bottom: 10px;
+  background-color: lightblue;
 
   /* Make the masthead heading the same height as the navigation */
   h3 {
@@ -44,6 +45,7 @@ body {
   padding-top: 19px;
   color: #777;
   border-top: 1px solid #e5e5e5;
+  background-color: lightblue;
 }
 
 .container-narrow > hr {

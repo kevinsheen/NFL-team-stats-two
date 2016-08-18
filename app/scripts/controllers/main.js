@@ -8,7 +8,7 @@
  * Controller of the nflteamstatstwoApp
  */
 angular.module('nflteamstatstwoApp')
-  .controller('MainCtrl', function ($scope, Teams,$localStorage, $location) {
+  .controller('MainCtrl', function ($scope, Teams, $localStorage, $location) {
     $scope.Teams = $localStorage.Teams;
     if ($scope.Teams === undefined){
       console.log("initializing team data"); 

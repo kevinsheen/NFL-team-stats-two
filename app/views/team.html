@@ -1,7 +1,7 @@
-<div ng-controller="TeamCtrl" class="results">
-  <h1>[Selected Team]</h1>
+<div ng-controller="TeamCtrl" class="results"ng-click="selectTeam(team.name)">{{team.name.id}}
+  <h1>Stats for [team name]</h1>
   
-  <div ng-repeat= "week in current.weeks">
+  <div ng-repeat= "teams in current.weeks">
     <h2>Week {{week.title}}</h2>
     <div ng-repeat="game in filteredGames = (week.games | filter:teamname)">
       <span>
