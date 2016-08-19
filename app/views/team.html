@@ -1,14 +1,29 @@
 <div ng-controller="TeamCtrl" class="results" >
   
+<h1>Stats for {{TeamStats.name}}</h1>
+
+ <div>
+   
   
-    
+  <p>
+    Passing Touchdowns: {{TeamStats.record.touchdowns.pass}} ({{100*(TeamStats.record.touchdowns.pass/TeamStats.record.touchdowns.total).toFixed(2)}}%)
+  </p>
+   
+   <p>
+    Rushing Touchdowns: {{TeamStats.record.touchdowns.rush}} ({{100*(TeamStats.record.touchdowns.rush/TeamStats.record.touchdowns.total).toFixed(2)}}%)
+  </p>
+   
+   
+   <p>
+     Touchdowns: {{TeamStats.record.touchdowns.rush}}
+   </p>
   
-
-  <h1>Stats for {{TeamStats.name}}</h1>
-
-
-
+  <ul>
+    <li ng-repeat="player in TeamStats.players">{{player.name}}</li>  
+  </ul>
+  
+</div>
 
 {{TeamStats | json}}
 
-  </div>
+</div>
