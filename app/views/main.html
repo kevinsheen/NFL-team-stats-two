@@ -6,19 +6,21 @@
 
 <div class="jumbotron" ng-controller="MainCtrl">
 
-<p>Select an NFL Team:</p>
+<p><h2>Select an NFL Team:</p></h2>
 
 <div ng-repeat="conference in Teams.conferences" label="{{conference.name}}">
     <div ng-repeat="division in conference.divisions" label="{{division.name}}">
      
-      <dl class="nfl-team-list">
+       <dl class="nfl-team-list">
         <li ng-repeat="team in division.teams"> <a ng-click="selectTeam(team.id)">{{team.name}}</a></li>
       </dl>
+
+      
       </div> 
 
 
 <p>
-    <button class="btn btn-lg btn-primary" ng-click="team">Get 2015 Team Stats</button>
+    <button class="btn btn-lg btn-primary" ng-click="selectTeam(team.id)">Get 2015 Team Stats</button>
 </p>
 
 </div>
