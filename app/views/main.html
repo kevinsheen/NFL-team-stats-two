@@ -1,26 +1,25 @@
 <div class="choose">
   <p><h1>
-  Choose an NFL team to view their 2015 season stats!
+    Choose an NFL team to view their 2015 season stats!
   </h1></p>
 </div>
 
 <div class="jumbotron" ng-controller="MainCtrl">
-
-<p><h2>Select an NFL Team:</p></h2>
-
-<div ng-repeat="conference in Teams.conferences" label="{{conference.name}}">
-    <div ng-repeat="division in conference.divisions" label="{{division.name}}">
-     
-       <dl class="nfl-team-list">
-        <li ng-repeat="team in division.teams"> <a ng-click="selectTeam(team.id)">{{team.name}}</a></li>
-      </dl>
-
+  
+  <p><h2>Select an NFL Team:</p></h2>
+  
+  <div ng-repeat="conference in Teams.conferences" label="{{conference.name}}" class="nfl-conference">
+    {{conference.name}}
+    <div ng-repeat="division in conference.divisions" label="{{division.name}}" class="nfl-division">
+      {{division.name}}
       
-      </div> 
-
-
-<!-- <p>
-    <button class="btn btn-lg btn-primary" ng-click="selectTeam(team.id)">Get 2015 Team Stats</button>
-</p> -->
-
+      <select class="nfl-team-list" ng-model="team.id">
+        <option ng-repeat="team in division.teams" value="{{team.id}}"> {{team.name}} </option>
+      </select>
+      
+      <p>
+        <button class="btn btn-lg btn-primary" ng-click="selectTeam(team.id)">Get 2015 Team Stats!</button>
+      </p>
+    </div>
+  </div>
 </div>

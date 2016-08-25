@@ -1,11 +1,97 @@
 <div ng-controller="TeamCtrl" class="results" >
   
-<h1>Stats for {{TeamStats.name}}</h1>
+<h1>Team Stats for {{TeamStats.name}}</h1>
 
  <div>
    
+   <h2>
+     Touchdowns
+   </h2>
+   
+ <dl class="touchdowns">
+    <dt>Passing Touchdowns</dt>
+    <dd>{{TeamStats.record.touchdowns.pass}} ({{100*(TeamStats.record.touchdowns.pass/TeamStats.record.touchdowns.total).toFixed(2)}}%)</dd>
+    <dt>Rushing Touchdowns</dt>
+    <dd>{{TeamStats.record.touchdowns.rush}} ({{100*(TeamStats.record.touchdowns.rush/TeamStats.record.touchdowns.total).toFixed(2)}}%)</dd>
+    <dt>Returned Touchdowns</dt>
+    <dd>{{TeamStats.record.touchdowns.total_return}} ({{100*(TeamStats.record.touchdowns.total_return/TeamStats.record.touchdowns.total).toFixed(2)}}%)</dd>
+</dl>  
+   
+   <h2>
+     Rushing
+   </h2>
   
-  <p>
+ <dl class="rushing">
+    <dt>Rushing Average</dt>
+    <dd>{{TeamStats.record.rushing.avg_yards}}</dd>
+    <dt>Rushing Attempts</dt>
+    <dd>{{TeamStats.record.rushing.attempts}}</dd>
+    <dt>Rushing Touchdowns</dt>
+    <dd>{{TeamStats.record.rushing.touchdowns}}</dd>
+    <dt>Rushing Yards</dt>
+    <dd>{{TeamStats.record.rushing.yards}}</dd>
+</dl>  
+   
+   <h2>
+     Receiving
+   </h2>
+   
+<dl class="receiving">
+    <dt>Receiving Targets</dt>
+    <dd>{{TeamStats.record.receiving.targets}}</dd>
+    <dt>Receiving Receptions</dt>
+    <dd>{{TeamStats.record.receiving.receptions}}</dd>
+    <dt>Receiving Average Yards</dt>
+    <dd>{{TeamStats.record.receiving.avg_yards}}</dd>
+    <dt>Receiving Yards</dt>
+    <dd>{{TeamStats.record.receiving.yards}}</dd>
+    <dt>Receiving Touchdowns</dt>
+    <dd>{{TeamStats.record.receiving.touchdowns}}</dd>
+    <dt>Yards After Catch (YAC)</dt>
+    <dd>{{TeamStats.record.receiving.yards_after_catch}}</dd>
+</dl>
+   
+   <h2>
+     Passing
+   </h2>
+   
+<dl class="passing">
+    <dt>Passing Attempts</dt>
+    <dd>{{TeamStats.record.passing.attempts}}</dd>
+    <dt>Passing Completions</dt>
+    <dd>{{TeamStats.record.passing.completions}}</dd>
+    <dt>Completion Percentage</dt>
+    <dd>{{TeamStats.record.passing.cmp_pct}}</dd>
+    <dt>Interceptions</dt>
+    <dd>{{TeamStats.record.passing.interceptions}}</dd>
+    <dt>Rating</dt>
+    <dd>{{TeamStats.record.passing.rating}}</dd>
+    <dt>Passing Touchdowns</dt>
+    <dd>{{TeamStats.record.passing.touchdowns}}</dd>
+    <dt>Passing Yards</dt>
+    <dd>{{TeamStats.record.passing.yards}}</dd>
+</dl>
+   
+   <h2>
+     Field Goals
+   </h2>
+   
+   <dl class="field-goals">
+    <dt>Field Goal Attempts</dt>
+    <dd>{{TeamStats.record.field_goals.attempts}}</dd>
+    <dt>Field Goals Made</dt>
+    <dd>{{TeamStats.record.field_goals.made}}</dd>
+    <dt>Blocked Field Goals</dt>
+    <dd>{{TeamStats.record.field_goals.blocked}}</dd>
+    <dt>Average Yards</dt>
+    <dd>{{TeamStats.record.field_goals.avg_yards}}</dd>
+    <dt>Longest Field Goal</dt>
+    <dd>{{TeamStats.record.field_goals.longest}}</dd>
+</dl>
+   
+   
+   
+ <!-- <p>
     Passing Touchdowns: {{TeamStats.record.touchdowns.pass}} ({{100*(TeamStats.record.touchdowns.pass/TeamStats.record.touchdowns.total).toFixed(2)}}%)
   </p>
    
@@ -13,17 +99,19 @@
     Rushing Touchdowns: {{TeamStats.record.touchdowns.rush}} ({{100*(TeamStats.record.touchdowns.rush/TeamStats.record.touchdowns.total).toFixed(2)}}%)
   </p>
    
-   
+     
    <p>
      Touchdowns: {{TeamStats.record.touchdowns.rush}}
    </p>
-  
+-->
+
+<!--    
   <ul>
     <li ng-repeat="player in TeamStats.players">{{player.name}}</li>  
-  </ul>
+  </ul> -->
   
-</div>
+</div> 
 
-{{TeamStats | json}}
+<!-- {{TeamStats | json}} -->
 
 </div>
