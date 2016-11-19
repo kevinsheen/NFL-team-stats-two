@@ -466,6 +466,7 @@ module.exports = function (grunt) {
     'svgmin'
     ]
   },
+    
 
     // Test settings
     karma: {
